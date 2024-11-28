@@ -19,7 +19,7 @@ import torch.nn as tnn
 import matplotlib.pyplot as plt
 from itertools import repeat, groupby
 
-from tensorflow.image import decode_png
+# from tensorflow.image import decode_png
 from sklearn.metrics import classification_report, average_precision_score
 from scipy.ndimage import (
     gaussian_filter1d,
@@ -175,6 +175,9 @@ def annotate_heatmap(
 def plot_to_image(figure):
     """Converts the matplotlib plot specified by 'figure' to a PNG image and
     returns it. The supplied figure is closed and inaccessible after this call."""
+    raise NotImplementedError(
+        "TensorFlow removed from repo need for find replacement for `decode_png`"
+    )
     # Save the plot to a PNG in memory.
     buf = io.BytesIO()
     plt.savefig(buf, format="png")
